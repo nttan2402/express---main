@@ -1,0 +1,26 @@
+extends ../layout/common
+
+block content
+		h1.display-1.ml-5 Users manager
+
+		h3.display-1.m-5 Users
+
+		table.table
+			tr
+				th(scope="col") Name
+				th(scope="col") Age
+				th(scope="col") Action
+
+			each val in users
+				tr
+					td= val.name
+					td= val.age
+					td(colspan="2")
+						form(action="/users/delete/" + val.name, method="POST")
+							button.btn.btn-primary DELETE
+							span.ml-3
+								form(action="/users/update/" + val.name, method="GET")
+									button.btn.btn-primary UPDATE
+
+			a.btn.btn-outline-info.m-2(href="/users/create") Add users
+

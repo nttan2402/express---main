@@ -1,0 +1,18 @@
+extends ../layout/common
+block content
+	h1 List Transactions
+
+	ul
+		each value, index in transactions
+			li= 'Transaction: ' + index
+				ul
+					form(action="/transactions/" + value.id + "/complete", method="POST")
+						label Is Complete: 
+						select(name="isComplete")
+							option(value= "true") True
+							option(value= "false") False
+						button Change
+					each val, key in value
+						li=key + ': ' + val
+
+	a(href="/transactions/create") ADD a transaction

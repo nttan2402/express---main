@@ -1,0 +1,37 @@
+extends ../layout/common
+
+block content
+	h1 Library
+
+	h3 Books:
+	b
+	ul
+	each val in databooks
+		li= val.title
+			span 
+				form(action="/books/update/" + val.title, method="POST")
+					label New title : 
+					input(type="text", name="title", value="Write something here" )
+					br
+					button UPDATE
+				form(action="/books/delete/" + val.title, method="POST")
+					label Delete :
+					br
+					button DELETE
+	br
+	h3 Add Book:
+	form(action="/books", method="POST")
+		label Title: 
+		br
+		input(type="text", name="title")
+		br
+		br
+		label Description:
+		br
+		input(type="text", name="description")
+		br
+		br
+		button ADD
+
+	h3 CRUD users
+	a(href="/users") LINK CRUD USERS

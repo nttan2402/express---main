@@ -1,0 +1,21 @@
+extends ../layout/common
+
+block content
+	h1 Create Transaction
+
+	form(action="/transactions/create", method="POST")
+			label Users: 
+			select(name="user")
+				ul
+					each val in users
+						option(value= val.name)= val.name
+			br
+			br
+			label Books:
+			select(name="book")
+				ul
+					each val in databooks
+						option(value= val.title)= val.title
+			br
+			br
+			button Create
