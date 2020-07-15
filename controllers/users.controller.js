@@ -3,11 +3,11 @@ var db = require("../db");
 var shortid = require("shortid");
 
 module.exports.index = function(req, res) {
-  res.render("users", { users: db.get("users").value() });
+  res.render("./users/users", { users: db.get("users").value() });
 } 
 
 module.exports.update = function(req, res) {
-  res.render("update", { name: req.params.name });
+  res.render("./users/update", { name: req.params.name });
 }
 module.exports.postUpdate = function(req, res) {
   req.body.id = shortid.generate();
@@ -24,7 +24,7 @@ module.exports.postDelete = function(req, res) {
   res.redirect("/users");
 }
 module.exports.create = function(req, res) {
-  res.render("create");
+  res.render("./users/create");
 }
 module.exports.postCreate = function(req, res) {
   var errors = [];

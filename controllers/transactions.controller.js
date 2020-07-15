@@ -2,15 +2,15 @@ var db = require("../db");
 var shortid = require("shortid");
 
 module.exports.index = function(req, res) {
-  res.render("transactions", { transactions: db.get("transactions").value() });
+  res.render("./transactions/transactions", { transactions: db.get("transactions").value() });
 };
 
 module.exports.transaction = function(req, res) {
-  res.render("transaction", { transaction: db.get("transactions").find(req.params).value() });
+  res.render("./transactions/transaction", { transaction: db.get("transactions").find(req.params).value() });
 };
 
 module.exports.create = function(req, res) {
-  res.render("createTransaction", {
+  res.render("./transactions/createTransaction", {
     databooks: db.get("databooks").value(),
     users: db.get("users").value(),
     isComplete: db.get("transactions").value()

@@ -2,7 +2,7 @@ var db = require("../db");
 var shortid = require("shortid");
 
 module.exports.index = function(req, res) {
-  res.render("index", { databooks: db.get("databooks").value() });
+  res.render("books/index", { databooks: db.get("databooks").value() });
 }
 module.exports.postIndex = function(req, res) {
   req.body.id = shortid.generate();
