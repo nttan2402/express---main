@@ -5,6 +5,10 @@ module.exports.index = function(req, res) {
   res.render("transactions", { transactions: db.get("transactions").value() });
 };
 
+module.exports.transaction = function(req, res) {
+  res.render("transaction", { transaction: db.get("transactions").find(req.params).value() });
+};
+
 module.exports.create = function(req, res) {
   res.render("createTransaction", {
     databooks: db.get("databooks").value(),
