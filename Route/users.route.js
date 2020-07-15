@@ -8,6 +8,6 @@ router.get("/update/:name", controller.update);
 router.post("/update/:name", controller.postUpdate);
 router.post("/delete/:name", controller.postDelete);
 router.get("/create", controller.create);
-router.post("/create", validation.postCreate, controller.postCreate);
+router.post("/create", validation.postCreate, controller.postCreate); //middle ware
 
 module.exports = router;
