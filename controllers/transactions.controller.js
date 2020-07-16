@@ -8,7 +8,7 @@ module.exports.index = function(req, res) {
 module.exports.transaction = function(req, res) {
   res.render("./transactions/transaction", { transaction: db.get("transactions").find(req.params).value() });
 };
-
+//create(get,post)
 module.exports.create = function(req, res) {
   res.render("./transactions/createTransaction", {
     databooks: db.get("databooks").value(),

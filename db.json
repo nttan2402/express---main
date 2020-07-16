@@ -28,74 +28,54 @@
   ],
   "users": [
     {
-      "name": "nyc",
-      "age": "27",
-      "id": "bngpBoz-V"
+      "name": "tan6",
+      "age": "65",
+      "email": "nntan242@gmail.com",
+      "id": "mE7rGqA_v",
+      "password": "123123",
+      "isAdmin": "false"
     },
     {
-      "name": "ly",
+      "name": "nguyenthanhtan",
       "age": "27",
-      "id": "KWOM7Qv-N"
+      "email": "nttan.env@gmail.com",
+      "id": "Th795kTql",
+      "password": "123123",
+      "isAdmin": "true"
     },
     {
-      "name": "sy",
-      "age": "27",
-      "id": "G_eKt3iB6"
+      "name": "hoa",
+      "age": "12",
+      "email": "nttan3@gmail.com",
+      "id": "cVEYoQ8fl",
+      "password": "123123"
     },
     {
-      "name": "ngoc",
-      "age": "28",
-      "id": "3hnSnOJs4"
-    },
-    {
-      "name": "Tan",
+      "name": "huy gay",
       "age": "27",
-      "id": "XS2gPSyuo"
+      "email": "nttan1@gmail.com",
+      "id": "e7T-hreEn",
+      "password": "123123"
     }
   ],
   "transactions": [
-    {
-      "idUser": "2rn23dq",
-      "idBook": "12dncdj",
-      "id": "asdjnk1",
-      "isComplete": "true"
-    },
-    {
-      "user": "Hanh legoo",
-      "book": "mother",
-      "id": "7yhGvFzlq",
-      "isComplete": "true"
-    },
-    {
-      "user": "Hanh legoo",
-      "book": "mother",
-      "id": "iDPcA2NWQd",
-      "isComplete": "true"
-    },
-    {
-      "user": "daniel",
-      "book": "hahaha",
-      "id": "dho9aAuz2",
-      "isComplete": "true"
-    },
-    {
-      "user": "Cuong AV",
-      "book": "aasd ",
-      "id": "O6yU9pwrV",
-      "isComplete": "true"
-    },
-    {
-      "user": "huy gay",
-      "book": "love love love",
-      "id": "hRxEDlcOE",
-      "isComplete": "true"
-    },
     {
       "user": "nyc",
       "book": "hahaha",
       "id": "89xs1F8Cd",
       "isComplete": false
+    },
+    {
+      "user": "tan6",
+      "book": "hahaha",
+      "id": "et0Fa3rRD",
+      "isComplete": "false"
+    },
+    {
+      "user": "nguyenthanhtan",
+      "book": "mother",
+      "id": "DmD6fn_zY",
+      "isComplete": false
     }
-  ],
-  "transaction": []
+  ]
 }

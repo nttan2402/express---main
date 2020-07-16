@@ -6,7 +6,7 @@ module.exports.index = function(req, res) {
 }
 
 module.exports.postLogin = function(req, res) {
-	console.log(req.body);
+
 	var user = req.body.user; //ngyen thanh tan
 	var password = req.body.password;
 

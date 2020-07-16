@@ -4,5 +4,13 @@ block content
 
 	h3.display-4.m-5 Transaction
 	.container
-		each val in transaction
-			li= val.id
+		table.table
+			tr
+				th(scope="col") Name
+				th(scope="col") Book
+				th(scope="col") Id Transaction
+				th(scope="col") Is Complete
+			tr
+				each val in transaction
+					td= val
+				
