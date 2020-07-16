@@ -10,17 +10,19 @@ block content
 				th(scope="col") Name
 				th(scope="col") Age
 				th(scope="col") Action
+				th(scope="col") Email
 
 			each val in users
 				tr
 					td= val.name
 					td= val.age
-					td(colspan="2")
-						form(action="/users/delete/" + val.name, method="POST")
+					td
+						form(action="/users/delete/" + val.id, method="POST")
 							button.btn.btn-primary DELETE
-							span.ml-3
-								form(action="/users/update/" + val.name, method="GET")
-									button.btn.btn-primary UPDATE
+							
+						form(action="/users/update/" + val.id, method="GET")
+							button.btn.btn-primary UPDATE
+					td= val.email
 
 			a.btn.btn-outline-info.m-2(href="/users/create") Add users
 

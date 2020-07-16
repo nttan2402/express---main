@@ -1,0 +1,18 @@
+extends ../../layout/common
+
+block content
+
+	h3.display-1.m-5  Login
+
+	if errors
+		each error in errors
+			.alert.alert-danger= error
+
+	form(method="POST")
+		.form-group
+			label(for="user") User  
+			input#user.form-control(type="text", name="user", placeholder='Your user', value= values ? values.user : "")
+		.form-group
+			label(for="password") Password 
+			input#password.form-control(type="Password", name="password", placeholder='Your Password', value= values ? values.password : "")
+		button.btn.btn-primary(type='submit') Login

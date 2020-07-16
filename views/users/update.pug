@@ -3,8 +3,8 @@ extends ../../layout/common
 block content
 		h1 Update users
 
-		h3 hello #{name}
-		form(action="/users/update/" + name, method="POST")
+		h3 hello #{oldname}
+		form(action="/users/update/" + id, method="POST")
 			label Name : 
 			input(type="text", name="name")
 			br

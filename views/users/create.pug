@@ -16,4 +16,7 @@ block content
 		.form-group
 			label(for="ageCreate") Age 
 			input#ageCreate.form-control(type="number", name="age", placeholder='Your Age', value= values ? values.age : "")
+		.form-group
+			label(for="emailCreate") Email
+			input#emailCreate.form-control(type="text", name="email", placeholder= 'abc@gmail.com', value= values ? values.email : "")
 		button.btn.btn-primary(type='submit') Create
