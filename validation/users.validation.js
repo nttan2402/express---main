@@ -8,6 +8,9 @@ module.exports.postCreate = function(req, res, next) {
   if(!req.body.age) {
     errors.push('Age is required')
   }
+  if(!req.body.email) {
+    errors.push('Email is required')
+  }
 
   if(errors.length) {
     res.render("./users/create", {
