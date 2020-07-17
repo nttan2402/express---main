@@ -1,8 +1,9 @@
 extends ../../layout/common
 
 block content
-	h1 List Transactions
-
+	h1.display-4.m-5 Hello Admin
+	h5.display-4.m-5 Have you a good day :) 
+	a(href="/transactions/create").btn.btn-outline-info.m-2 ADD a transaction
 	ul
 		each value, index in transactions
 			li= 'Transaction: ' + index
@@ -16,4 +17,4 @@ block content
 					each val, key in value
 						li=key + ': ' + val
 
-	a(href="/transactions/create") ADD a transaction
+	

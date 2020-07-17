@@ -9,6 +9,7 @@ var transactionRoute = require("./Route/transactions.route");
 var loginRoute = require("./Route/login.route");
 // auth middleware
 var authLogin = require("./middleware/middleware.login");
+var authAdmin = require("./middleware/middleware.admin");
 // our default array of dreams 
 var count = 0;
 var app = express();
@@ -30,6 +31,7 @@ app.get("/", function(req, res){
   	}
   	console.log('cookes:', count);
 })
+//Link here:
 //Login
 app.use("/login", loginRoute);
 //Books
@@ -37,7 +39,7 @@ app.use("/books", booksRoute);
 //Users
 app.use("/users", authLogin.requireAuth, usersRoute);
 //Transactions
-app.use("/transactions", transactionRoute);
+app.use("/transactions", authAdmin.admin, transactionRoute);
 
 // listen for requests :)
 

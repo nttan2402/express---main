@@ -5,10 +5,6 @@ module.exports.index = function(req, res) {
   res.render("./transactions/transactions", { transactions: db.get("transactions").value() });
 };
 
-module.exports.transaction = function(req, res) {
-  res.render("./transactions/transaction", { transaction: db.get("transactions").find(req.params).value() });
-};
-
 module.exports.create = function(req, res) {
   res.render("./transactions/createTransaction", {
     databooks: db.get("databooks").value(),
@@ -23,7 +19,7 @@ module.exports.postCreate = function(req, res){
   res.redirect("/transactions")
 }
 module.exports.isComplete = function (req, res) {
-  var abv= db.get('transactions')
+  db.get('transactions')
   .find(req.params)
   .assign(req.body)
   .write();

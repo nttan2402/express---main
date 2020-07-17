@@ -37,6 +37,7 @@ module.exports.create = function(req, res) {
 module.exports.postCreate = function(req, res) {
   req.body.id = shortid.generate();
   req.body.password = "123123";
+  req.body.isAdmin = false;
   db.get("users")
     .push(req.body)
     .write();

@@ -6,8 +6,8 @@ module.exports.index = function(req, res) {
 }
 
 module.exports.postLogin = function(req, res) {
-	console.log(req.body);
-	var user = req.body.user; //ngyen thanh tan
+
+	var user = req.body.user; 
 	var password = req.body.password;
 
 	var match = db.get("users").find({name : user}).value();
@@ -19,7 +19,7 @@ module.exports.postLogin = function(req, res) {
 			],
 			values : user
 		});
-		return;
+		return;// if false return immediately and not run into logic below
 	}
 
 	if(match.password !== password) {
@@ -28,8 +28,11 @@ module.exports.postLogin = function(req, res) {
 			"Wrong password."
 			] 
 		});
-		return;
+		return;// if false return immediately and not run into logic below
 	}
-	res.cookie("userId", match.id);
-	res.redirect("/users");
+	res.cookie("userId", match.id); //if true, server send a cookie to client :)
+	res.redirect("/users"); // redirect to users url include cookie. 
+	//it is checked by the middleware of the user link
 }
+
+// this page login to website. not a middleware.
