@@ -7,7 +7,7 @@ module.exports.index = function(req, res) {
 
 module.exports.postLogin = function(req, res) {
 
-	var user = req.body.user; 
+	var user = req.body.user; //ngyen thanh tan
 	var password = req.body.password;
 
 	var match = db.get("users").find({name : user}).value();
