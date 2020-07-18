@@ -1,6 +1,10 @@
 
 var db = require("../db");
 var shortid = require("shortid");
+//create Password
+var bcrypt = require('bcrypt');
+var saltRounds = 10;
+var myPlaintextPassword = '123123';
 
 module.exports.index = function(req, res) {
   res.render("./users/users", { users: db.get("users").value() });
@@ -35,11 +39,15 @@ module.exports.create = function(req, res) {
 }
 
 module.exports.postCreate = function(req, res) {
-  req.body.id = shortid.generate();
-  req.body.password = "123123";
-  req.body.isAdmin = false;
-  db.get("users")
-    .push(req.body)
-    .write();
-  res.redirect("/users");
+  bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
+    req.body.password = hash;
+    req.body.id = shortid.generate();
+    req.body.isAdmin = false;
+    req.body.wrongLoginCount = 0;
+    db.get("users")
+      .push(req.body)
+      .write();
+    res.redirect("/users");
+});
+
 }

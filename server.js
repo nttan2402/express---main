@@ -24,7 +24,7 @@ app.set("views", "./views"); //for template engine
 app.set("view engine", "pug");
 
 app.get("/", function(req, res){
-	res.cookie('users-id', shortid.generate());
+	res.cookie('users-id-home', shortid.generate());
   	res.render("home");
   	if(req.cookies) {
   		count++;
