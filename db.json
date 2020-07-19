@@ -60,7 +60,7 @@
       "email": "nasds@gmail.com",
       "password": "$2b$10$xuiRKbO08XN8z1TRk7YgCO8EKavjro1sx6d7.1tjqEbxFvA2qRshq",
       "id": "HwZdLHzzg",
-      "isAdmin": false,
+      "isAdmin": true,
       "wrongLoginCount": 0
     }
   ],

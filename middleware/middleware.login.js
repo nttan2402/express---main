@@ -17,6 +17,9 @@ module.exports.requireAuth = function(req, res, next) {
 		res.redirect("/login");
 		return;
 	}
+
+	res.locals.user = user;
+
 	next();// if cookie in database so next
 
 }

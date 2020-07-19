@@ -39,7 +39,7 @@ app.use("/books", booksRoute);
 //Users
 app.use("/users", authLogin.requireAuth, usersRoute);
 //Transactions
-app.use("/transactions", authAdmin.admin, transactionRoute);
+app.use("/transactions", authLogin.requireAuth, authAdmin.admin, transactionRoute);
 
 // listen for requests :)
 
