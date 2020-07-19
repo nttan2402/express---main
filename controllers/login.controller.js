@@ -15,11 +15,9 @@ module.exports.postLogin = function(req, res) {
 	// var hashpassword = md5(password);
 	console.log('postLogin', req.body )
 	var match = db.get("users").find({name : user}).value();
-	console.log(match);
-	var hash = match.password;
+	console.log('check match',match);
 	
-	if(match.wrongLoginCount <= 4) {
-		if(!match) { //check user
+	if(!match) { //check user
 
 			res.render("login/login", {
 				errors: [
@@ -30,7 +28,10 @@ module.exports.postLogin = function(req, res) {
 			return;// if false return immediately and not run into logic below
 		}
 
-	    if(!bcrypt.compareSync(password, hash)) { //check password
+	
+	if(match.wrongLoginCount <= 4) {
+		
+	    if(!bcrypt.compareSync(password, match.password)) { //check password
 	    	//Count
 	    	match.wrongLoginCount++;
 	    	//save into database
@@ -46,7 +47,7 @@ module.exports.postLogin = function(req, res) {
 			});
 			return;// if false return immediately and not run into logic below
 		}
-		res.cookie("userId", match.id); //if true, server send a cookie to client :)
+		res.cookie("userId", match.id, { signed: true}); //if true, server send a cookie to client :)
 		res.redirect("/users"); // redirect to users url include cookie. 
 		//it is checked by the middleware of the user link
 	}else {

@@ -1,7 +1,8 @@
 var db = require("../db");
 
 module.exports.admin = function(req, res, next) {
-	var user = db.get("users").find({ id: req.cookies.userId}).value(); //convert cookie--> user
+	
+	var user = db.get("users").find({ id: req.signedCookies.userId}).value(); //convert cookie--> user
 	//real cookie
 	//if it is not admin --> redirect to transaction
 	if(user.isAdmin) {

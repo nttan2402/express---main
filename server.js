@@ -14,8 +14,9 @@ var authAdmin = require("./middleware/middleware.admin");
 var count = 0;
 var app = express();
 var port = 9080;
-
-app.use(cookieParser()); // for cookies
+//create a random string
+var randomString = shortid.generate();
+app.use(cookieParser(randomString)); // for cookies
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));// create static path
@@ -42,7 +43,7 @@ app.use("/users", authLogin.requireAuth, usersRoute);
 app.use("/transactions", authLogin.requireAuth, authAdmin.admin, transactionRoute);
 
 // listen for requests :)
-
+ 
 const listener = app.listen(port, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
