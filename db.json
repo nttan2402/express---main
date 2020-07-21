@@ -39,11 +39,11 @@
     {
       "name": "testWrongpass",
       "age": "12",
-      "email": "wwq@masd.com",
+      "email": "nguyenthanhtan.environment@gmail.com",
       "password": "$2b$10$Xs8VLofOgk1mrdRtkBsGoeXVJggeojufXcXyptmqI9TvCgk1rdQoW",
       "id": "m6hguqC66",
       "isAdmin": false,
-      "wrongLoginCount": 0
+      "wrongLoginCount": 5
     },
     {
       "name": "Nguyễn Thanh Tân",

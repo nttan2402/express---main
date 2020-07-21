@@ -1,8 +1,13 @@
+const sgMail = require('@sendgrid/mail');
+
 var md5 = require('md5');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+var bcrypt = require('bcrypt');
+var saltRounds = 10;
 var db = require("../db");
 var shortid = require("shortid");
+
+
+
 
 module.exports.index = function(req, res) {
   res.render("login/login");
@@ -13,10 +18,9 @@ module.exports.postLogin = function(req, res) {
 	var user = req.body.user; //ngyen thanh tan
 	var password = req.body.password;
 	// var hashpassword = md5(password);
-	console.log('postLogin', req.body )
-	var match = db.get("users").find({name : user}).value();
-	console.log('check match',match);
 	
+	var match = db.get("users").find({name : user}).value();
+		
 	if(!match) { //check user
 
 			res.render("login/login", {
@@ -51,6 +55,21 @@ module.exports.postLogin = function(req, res) {
 		res.redirect("/users"); // redirect to users url include cookie. 
 		//it is checked by the middleware of the user link
 	}else {
+			console.log(match.email);
+			sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+			const msg = {
+			  to: match.email, //getdata
+			  from: 'nttan.env@gmail.com',
+			  subject: 'Your account is blocked',
+			  text: 'Your account is blocked cause wrong too much',
+			  html: '<strong>Your account is blocked cause wrong too much</strong>',
+			};
+			sgMail.send(msg, function(error, info){
+				if(error){
+					return console.log(error);
+				}
+				console.log('send success!')
+			});
 			res.render("login/login", {
 				errors: [
 				"Your account is blocked"
