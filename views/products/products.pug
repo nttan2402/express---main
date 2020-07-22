@@ -1,0 +1,19 @@
+extends ../../layout/common
+
+block content
+
+	h5.display-4 Product
+
+	.d-flex.align-items-center
+		form.ml-auto(action="/products/search", method="GET", class="d-flex")
+			input.form-control(type="text", name="q")
+			button.btn.btn-primary.ml-2 Search
+	.row
+		each product in products
+			.col-sm-6.col-md-4.col-lg-3
+				.card.mb-3
+					img.card-img-top(src=product.image)
+					.card-body
+						h5.card-title= product.name
+						p.card-text= product.descripstion
+						a.btn.btn-primary(href="#") Add to card
