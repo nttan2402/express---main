@@ -7,7 +7,14 @@ var db = low(adapter);
 db.defaults({
   databooks: [],
   users: [],
-  transactions: []
+  transactions: [{
+      "name": "thanhtan",
+      "age": "27",
+      "email": "nttan.1@gmail.com",
+      "id": "ZCOW2o7AF",
+      "password": "123123",
+      "isAdmin": true
+    }]
 }).write();
 
 module.exports = db;
