@@ -15,5 +15,22 @@ block content
 					img.card-img-top(src=product.image)
 					.card-body
 						h5.card-title= product.name
-						p.card-text= product.descripstion
+						p.card-text= product.description
 						a.btn.btn-primary(href="#") Add to card
+
+	nav(aria-label='Page navigation example')
+		ul.pagination
+			li.page-item
+				a.page-link(href='/products/?page=' + pagePrevious, aria-label='Previous')
+					span(aria-hidden='true') &laquo;
+					span.sr-only Previous
+			li.page-item
+				a.page-link(href='/products/?page=' + pagePrevious)=page - 1 
+			li.page-item
+				a.page-link(href='/products/?page=' + page)=page 
+			li.page-item
+				a.page-link(href='/products/?page=' + pageNext)=page + 1
+			li.page-item
+				a.page-link(href='/products/?page=' + pageNext, aria-label='Next')
+					span(aria-hidden='true') &raquo;
+					span.sr-only Next
