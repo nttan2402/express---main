@@ -1,4 +1,4 @@
-const sgMail = require('@sendgrid/mail');
+const sgMail = require('@sendgrid/mail'); //send grid email
 
 var md5 = require('md5');
 var bcrypt = require('bcrypt');

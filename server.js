@@ -9,6 +9,7 @@ var booksRoute = require("./Route/books.route");
 var usersRoute = require("./Route/users.route");
 var transactionRoute = require("./Route/transactions.route");
 var loginRoute = require("./Route/login.route");
+var productsRoute = require("./Route/products.route");
 // auth middleware
 var authLogin = require("./middleware/middleware.login");
 var authAdmin = require("./middleware/middleware.admin");
@@ -43,6 +44,8 @@ app.use("/books", booksRoute);
 app.use("/users", authLogin.requireAuth, usersRoute);
 //Transactions
 app.use("/transactions", authLogin.requireAuth, authAdmin.admin, transactionRoute);
+//Products
+app.use("/products", productsRoute);
 
 // listen for requests :)
  
