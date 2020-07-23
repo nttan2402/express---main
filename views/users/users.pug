@@ -7,6 +7,7 @@ block content
 
 		table.table
 			tr
+				th(scope="col") Avatar
 				th(scope="col") Name
 				th(scope="col") Age
 				th(scope="col") Action
@@ -14,6 +15,8 @@ block content
 
 			each val in users
 				tr
+					td
+						img(src= val.avatar, style="width: 32px")
 					td= val.name
 					td= val.age
 					td

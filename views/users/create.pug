@@ -9,7 +9,7 @@ block content
 		each error in errors
 			.alert.alert-danger= error
 
-	form(action="/users/create", method="POST")
+	form(action="/users/create", method="POST", enctype="multipart/form-data")
 		.form-group
 			label(for="nameCreate") Name  
 			input#nameCreate.form-control(type="text", name="name", placeholder='Your Name', value= values ? values.name : "")
@@ -19,4 +19,7 @@ block content
 		.form-group
 			label(for="emailCreate") Email
 			input#emailCreate.form-control(type="text", name="email", placeholder= 'abc@gmail.com', value= values ? values.email : "")
+		.form-group
+			label(for="avatar") Avatar
+			input#avatar.form-control-file(type="file", name="avatar")
 		button.btn.btn-primary(type='submit') Create

@@ -2,8 +2,6 @@ var db = require("../db");
 
 module.exports.requireAuth = function(req, res, next) {
 
-console.log('signedCookies', req.signedCookies);
-console.log('cookies', req.cookies);
 	if(!req.signedCookies.userId) { //if cookie false --> back user to login page (not user)
 		//with cookie, user can login users page.
 		res.redirect("/login");

@@ -43,7 +43,7 @@
       "password": "$2b$10$Xs8VLofOgk1mrdRtkBsGoeXVJggeojufXcXyptmqI9TvCgk1rdQoW",
       "id": "m6hguqC66",
       "isAdmin": false,
-      "wrongLoginCount": 5
+      "wrongLoginCount": 2
     },
     {
       "name": "Nguyễn Thanh Tân",
@@ -62,6 +62,35 @@
       "id": "HwZdLHzzg",
       "isAdmin": true,
       "wrongLoginCount": 0
+    },
+    {
+      "name": "Huyen",
+      "age": "32",
+      "email": "nntan122@gmail.com",
+      "password": "$2b$10$wazGEqn8aGZkt8Jkv8IFHOr.bxwLy/dU7UKyL1zfPJvvEHi7ODOqO",
+      "id": "3-_fUQj-w",
+      "isAdmin": false,
+      "wrongLoginCount": 0
+    },
+    {
+      "name": "Huyen 3",
+      "age": "23",
+      "email": "ntta23n1@gmail.com",
+      "password": "$2b$10$v2bV0a7mt.naZNkelAkoEe/fOPA/tsycTuy0ZDdjqkyS5P0F.lDUe",
+      "id": "obpCob3eY",
+      "isAdmin": false,
+      "wrongLoginCount": 0,
+      "avatar": "uploads\\974134fe6ce3da52104baf9aab379dc8"
+    },
+    {
+      "name": "hung",
+      "age": "11",
+      "email": "nttan1@gmail.com",
+      "password": "$2b$10$mqIYoLP33t.OyrVVgSOmluHOhpATqGS9sLQw4dS8R9wZe1a8EVezi",
+      "id": "2S3xe5f5X",
+      "isAdmin": false,
+      "wrongLoginCount": 0,
+      "avatar": "uploads\\1a5b2258f830e9c0ad1b057a816ad962"
     }
   ],
   "transactions": [

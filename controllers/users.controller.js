@@ -39,15 +39,17 @@ module.exports.create = function(req, res) {
 }
 
 module.exports.postCreate = function(req, res) {
-  bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
-    req.body.password = hash;
-    req.body.id = shortid.generate();
-    req.body.isAdmin = false;
-    req.body.wrongLoginCount = 0;
-    db.get("users")
-      .push(req.body)
-      .write();
-    res.redirect("/users");
-});
+    bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
+      req.body.password = hash;
+      req.body.id = shortid.generate();
+      req.body.isAdmin = false;
+      req.body.wrongLoginCount = 0;
+      req.body.avatar = req.file.path.slice(7);
+      console.log(req.body.avatar);
+      db.get("users")
+        .push(req.body)
+        .write();
+      res.redirect("/users");
+  });
 
 }

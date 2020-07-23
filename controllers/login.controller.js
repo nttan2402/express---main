@@ -20,7 +20,7 @@ module.exports.postLogin = function(req, res) {
 	// var hashpassword = md5(password);
 	
 	var match = db.get("users").find({name : user}).value();
-		
+	console.log(match);
 	if(!match) { //check user
 
 			res.render("login/login", {
