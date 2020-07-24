@@ -45,7 +45,6 @@ module.exports.postCreate = function(req, res) {
       req.body.isAdmin = false;
       req.body.wrongLoginCount = 0;
       req.body.avatar = req.file.path.slice(7);
-      console.log(req.body.avatar);
       db.get("users")
         .push(req.body)
         .write();

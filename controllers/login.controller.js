@@ -20,7 +20,7 @@ module.exports.postLogin = function(req, res) {
 	// var hashpassword = md5(password);
 	
 	var match = db.get("users").find({name : user}).value();
-	console.log(match);
+	
 	if(!match) { //check user
 
 			res.render("login/login", {
@@ -55,7 +55,7 @@ module.exports.postLogin = function(req, res) {
 		res.redirect("/users"); // redirect to users url include cookie. 
 		//it is checked by the middleware of the user link
 	}else {
-			console.log(match.email);
+			
 			sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 			const msg = {
 			  to: match.email, //getdata
