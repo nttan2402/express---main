@@ -9,9 +9,14 @@ var validation = require("../validation/users.validation");
 
 
 router.get("/", controller.index);
-router.get("/update/:id", controller.update);
-router.post("/update/:id", controller.postUpdate);
+
+router.get("/update/:id" + "/profile", controller.update);
+router.post("/update/:id" + "/profile", controller.postUpdate);
 router.post("/delete/:id", controller.postDelete);
+
+router.get("/update/:id" + "/profile/avatar", controller.getAvatar);
+router.post("/update/:id" + "/profile/avatar", upload.single('avatar'), controller.postAvatar);
+
 router.get("/create", controller.create);
 router.post("/create", 
 			upload.single('avatar'), 

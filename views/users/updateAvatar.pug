@@ -1,0 +1,16 @@
+extends ../../layout/common
+
+block content
+
+	h3 Your Avatar
+
+	div Avatar
+		div= user.name
+		div
+			img(src= "/" +user.avatar, style="width: 64px")
+
+	form(method="POST", enctype="multipart/form-data")
+		.form-group
+				label(for="avatar") Update Avatar
+				input#avatar.form-control-file(type="file", name="avatar")
+		button.btn.btn-primary(type='submit') Update

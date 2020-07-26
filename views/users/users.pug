@@ -13,7 +13,7 @@ block content
 				th(scope="col") Action
 				th(scope="col") Email
 
-			each val in users
+			each val in users 
 				tr
 					td
 						img(src= val.avatar, style="width: 32px")
@@ -23,7 +23,7 @@ block content
 						form(action="/users/delete/" + val.id, method="POST")
 							button.btn.btn-primary DELETE
 							
-						form(action="/users/update/" + val.id, method="GET")
+						form(action="/users/update/" + val.id + "/profile", method="GET")
 							button.btn.btn-primary UPDATE
 					td= val.email
 

@@ -1,10 +1,9 @@
 extends ../../layout/common
 
 block content
-		h1 Update users
+		h1 Update Your Profile
 
-		h3 hello #{oldname}
-		form(action="/users/update/" + id, method="POST")
+		form(action="/users/update/" + user.id + "/profile", method="POST")
 			label Name : 
 			input(type="text", name="name")
 			br
@@ -13,4 +12,23 @@ block content
 			input(type="number", name="age")
 			br
 			br
-			button UPDATE
+			label Email : 
+			input(type="email", name="email")
+			br
+			br
+			button.btn.btn-outline-info.m-2 UPDATE
+		a.btn.btn-outline-info.m-2(href="/users/update/" + user.id + "/profile/avatar") UPDATE AVATAR
+
+		table.table 
+			h3 Profile: #{user.name}
+			tr
+				th(scope="col") Avatar
+				th(scope="col") Name
+				th(scope="col") Age
+				th(scope="col") Email
+			tr
+				td
+					img(src= "/" +user.avatar, style="width: 64px")
+				td= user.name
+				td= user.age
+				td= user.email

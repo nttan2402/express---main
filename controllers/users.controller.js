@@ -1,6 +1,14 @@
 
 var db = require("../db");
 var shortid = require("shortid");
+var cloudinary = require('cloudinary').v2;
+//config
+cloudinary.config({ 
+  cloud_name: 'nttan2402', 
+  api_key: '464718799829179', 
+  api_secret: 'osxwk6Qqd1SRLFRNZmA7s5viR9Q' 
+});
+
 //create Password
 var bcrypt = require('bcrypt');
 var saltRounds = 10;
@@ -11,12 +19,39 @@ module.exports.index = function(req, res) {
 } 
 
 module.exports.update = function(req, res) {
+  var value = db.get("users")
+              .find({ id: req.params.id })
+              .value();
+  res.render("./users/update", { user: value
+                                  });
+}
+
+module.exports.getAvatar = function(req, res) {
   var user = db.get("users")
               .find({ id: req.params.id })
               .value();
-  res.render("./users/update", { oldname: user.name,
-                                  id: user.id
+  res.render("./users/updateAvatar" , { user: user
                                   });
+}
+
+module.exports.postAvatar = function(req, res) {
+  req.body.avatar = req.file.path.slice(7);
+  // req.body.avatarUrl = '';
+  cloudinary.uploader.upload(req.file.path, 
+                      { folder: "coderX" }, 
+                        function (err, image) {
+                console.log();
+                console.log("** File Upload");
+                console.log(image.url)
+                req.body.avatarUrl = image.url;
+                if (err) { console.warn(err); }
+                   db.get("users")
+                  .find({ id: req.params.id })
+                  .assign(req.body)
+                  .write();
+                res.redirect("/users");
+                      });
+
 }
 
 module.exports.postUpdate = function(req, res) {

@@ -28,22 +28,15 @@
   ],
   "users": [
     {
-      "name": "Tan3",
-      "age": "12",
-      "email": "1231@gmail.com",
-      "password": "$2b$10$BFFMVDudPpTzoxzdZQg9j.IWvJc9CUf0VjR8YPoJerplbljaqkmUe",
-      "id": "bvaWW1OD2",
-      "isAdmin": false,
-      "wrongLoginCount": 0
-    },
-    {
       "name": "testWrongpass",
       "age": "12",
       "email": "nguyenthanhtan.environment@gmail.com",
       "password": "$2b$10$Xs8VLofOgk1mrdRtkBsGoeXVJggeojufXcXyptmqI9TvCgk1rdQoW",
       "id": "m6hguqC66",
       "isAdmin": false,
-      "wrongLoginCount": 2
+      "wrongLoginCount": 2,
+      "avatar": "uploads\\d02c28c356598d061c5a04fde869d849",
+      "avatarUrl": "http://res.cloudinary.com/nttan2402/image/upload/v1595779387/coderX/ips8cj22buvri5sl1gwy.png"
     },
     {
       "name": "Nguyễn Thanh Tân",
@@ -52,16 +45,18 @@
       "password": "$2b$10$eBbTfNcP.nX7kY7ACsf8/uyG6ifdfJH/NDA4CH6ZfHt1iqO3nYpnG",
       "id": "bsjVsJv5j",
       "isAdmin": false,
-      "wrongLoginCount": 0
+      "wrongLoginCount": 0,
+      "avatar": "uploads\\9eccc8356152b985cfc66beede5d8976"
     },
     {
       "name": "thanhtan",
-      "age": "2323",
-      "email": "nasds@gmail.com",
+      "age": "100",
+      "email": "ew@gmail.com",
       "password": "$2b$10$xuiRKbO08XN8z1TRk7YgCO8EKavjro1sx6d7.1tjqEbxFvA2qRshq",
       "id": "HwZdLHzzg",
       "isAdmin": true,
-      "wrongLoginCount": 1
+      "wrongLoginCount": 1,
+      "avatar": "uploads\\14d5fe82d26639f276f875a4b2d17dec"
     },
     {
       "name": "Huyen",
@@ -70,7 +65,8 @@
       "password": "$2b$10$wazGEqn8aGZkt8Jkv8IFHOr.bxwLy/dU7UKyL1zfPJvvEHi7ODOqO",
       "id": "3-_fUQj-w",
       "isAdmin": false,
-      "wrongLoginCount": 0
+      "wrongLoginCount": 0,
+      "avatar": "uploads\\cb00b9c34ff755c3a416ae1560c8e4e2"
     },
     {
       "name": "Huyen 3",
@@ -80,7 +76,7 @@
       "id": "obpCob3eY",
       "isAdmin": false,
       "wrongLoginCount": 0,
-      "avatar": "uploads\\974134fe6ce3da52104baf9aab379dc8"
+      "avatar": "uploads\\8ad9870ce0a9ab7aa60504a6e1321dd8"
     },
     {
       "name": "hung",
@@ -90,7 +86,7 @@
       "id": "2S3xe5f5X",
       "isAdmin": false,
       "wrongLoginCount": 0,
-      "avatar": "uploads\\1a5b2258f830e9c0ad1b057a816ad962"
+      "avatar": "uploads\\e7fb247a97e88298c5b8904f7cec6d39"
     }
   ],
   "transactions": [
