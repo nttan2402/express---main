@@ -35,7 +35,6 @@
       "id": "m6hguqC66",
       "isAdmin": false,
       "wrongLoginCount": 2,
-      "avatar": "uploads\\d02c28c356598d061c5a04fde869d849",
       "avatarUrl": "http://res.cloudinary.com/nttan2402/image/upload/v1595779387/coderX/ips8cj22buvri5sl1gwy.png"
     },
     {
@@ -86,7 +85,28 @@
       "id": "2S3xe5f5X",
       "isAdmin": false,
       "wrongLoginCount": 0,
-      "avatar": "uploads\\e7fb247a97e88298c5b8904f7cec6d39"
+      "avatar": "uploads\\b9985c7fd21ad9fcacb8701beb9f864b",
+      "avatarUrl": "http://res.cloudinary.com/nttan2402/image/upload/v1595812049/coderX/rjpz7rfes5cls32cxguf.png"
+    },
+    {
+      "name": "Hoang phi Ho",
+      "age": "232",
+      "email": "nntan2asdas2@gmail.com",
+      "password": "$2b$10$9E4c6DTwVEiWJMY67IieOeM7/fpDG96oTeh1bD2660PQ9LFPFGi26",
+      "id": "lpCnq8yFV",
+      "isAdmin": false,
+      "wrongLoginCount": 0,
+      "avatar": "uploads\\f65d7f33fb6de143b6cc379a28588a09"
+    },
+    {
+      "name": "Hoang phi Hong",
+      "age": "32",
+      "email": "asds@dasd",
+      "password": "$2b$10$L/qRMe9Ty7SwM4CHC0ZJXeoueY16bRNSpZ/cHSn/iksY5uTpcyDG.",
+      "id": "GfRzr6Jbc",
+      "isAdmin": false,
+      "wrongLoginCount": 0,
+      "avatar": "uploads\\73cedb4dd97584bfc7374da2458ceb28"
     }
   ],
   "transactions": [

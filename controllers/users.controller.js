@@ -40,17 +40,17 @@ module.exports.postAvatar = function(req, res) {
   cloudinary.uploader.upload(req.file.path, 
                       { folder: "coderX" }, 
                         function (err, image) {
-                console.log();
-                console.log("** File Upload");
-                console.log(image.url)
-                req.body.avatarUrl = image.url;
-                if (err) { console.warn(err); }
-                   db.get("users")
-                  .find({ id: req.params.id })
-                  .assign(req.body)
-                  .write();
-                res.redirect("/users");
-                      });
+                        console.log();
+                        console.log("** File Upload");
+                        console.log(image.url)
+                        req.body.avatarUrl = image.url;
+                        if (err) { console.warn(err); }
+                           db.get("users")
+                              .find({ id: req.params.id })
+                              .assign(req.body)
+                              .write();
+                        res.redirect("/users");
+                              });
 
 }
 
@@ -75,15 +75,32 @@ module.exports.create = function(req, res) {
 
 module.exports.postCreate = function(req, res) {
     bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
-      req.body.password = hash;
-      req.body.id = shortid.generate();
-      req.body.isAdmin = false;
-      req.body.wrongLoginCount = 0;
-      req.body.avatar = req.file.path.slice(7);
-      db.get("users")
-        .push(req.body)
-        .write();
-      res.redirect("/users");
-  });
+      if (req.file) {
+          req.file.path = '/image/bower-logo.image';
+         }
+       cloudinary.uploader.upload(req.file.path, 
+                      { folder: "coderX" }, 
+                        function (err, image) {
 
+                        console.log();
+                        console.log("** File Upload");
+                        console.log(image.url)
+                        if (err) { console.warn(err); }
+
+                        req.body.avatarUrl = image.url;
+                        req.body.password = hash;
+                        req.body.id = shortid.generate();
+                        req.body.isAdmin = false;
+                        req.body.wrongLoginCount = 0;
+                        req.body.avatar = req.file.path.slice(7);
+
+                        db.get("users")
+                          .push(req.body)
+                          .write();
+
+                        res.redirect("/users");
+          });
+
+               
+     });
 }

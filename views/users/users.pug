@@ -16,7 +16,10 @@ block content
 			each val in users 
 				tr
 					td
-						img(src= val.avatar, style="width: 32px")
+						if(val.avatar)
+							img(src= val.avatar, style="width: 32px")
+						else
+							img(src="/images/bower-logo.png", style="width: 32px")
 					td= val.name
 					td= val.age
 					td
