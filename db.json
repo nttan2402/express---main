@@ -173,19 +173,19 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1asd12",
       "name": "Rat, white-faced tree",
       "image": "https://loremflickr.com/320/240/dog",
       "description": "justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus"
     },
     {
-      "id": 2,
+      "id": "1awsd12",
       "name": "Red-billed buffalo weaver",
       "image": "https://loremflickr.com/320/240/dog",
       "description": "cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam"
     },
     {
-      "id": 3,
+      "id": "1assds12",
       "name": "Robin, white-throated",
       "image": "https://loremflickr.com/320/240/dog",
       "description": "id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia"
@@ -771,6 +771,24 @@
       "name": "Swamp deer",
       "image": "https://loremflickr.com/320/240/dog",
       "description": "et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "AVZBqu8Fd",
+      "cart": [
+        null,
+        1
+      ]
+    },
+    {
+      "id": "t6AEHpYMI",
+      "cart": {
+        "1asd12": 3
+      }
+    },
+    {
+      "id": "M4Q_LcAzo"
     }
   ]
 }

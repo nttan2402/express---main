@@ -6,6 +6,7 @@ var db = low(adapter);
 
 db.defaults({
   databooks: [],
+  sessions : [],
   users: [],
   transactions: [{
       "name": "thanhtan",

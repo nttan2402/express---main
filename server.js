@@ -10,9 +10,11 @@ var usersRoute = require("./Route/users.route");
 var transactionRoute = require("./Route/transactions.route");
 var loginRoute = require("./Route/login.route");
 var productsRoute = require("./Route/products.route");
+var cartRoute = require("./Route/cart.route");
 // auth middleware
 var authLogin = require("./middleware/middleware.login");
 var authAdmin = require("./middleware/middleware.admin");
+var setCookies = require("./middleware/middleware.session.js");
 // our default array of dreams 
 var count = 0;
 var app = express();
@@ -35,6 +37,8 @@ app.get("/", function(req, res){
   	}
   	console.log('cookes:', count);
 })
+
+app.use(setCookies);
 //Link here:
 //Login
 app.use("/login", loginRoute);
@@ -46,6 +50,8 @@ app.use("/users", authLogin.requireAuth, usersRoute);
 app.use("/transactions", authLogin.requireAuth, authAdmin.admin, transactionRoute);
 //Products
 app.use("/products", productsRoute);
+//Cart
+app.use("/Cart", cartRoute);
 
 // listen for requests :)
  
