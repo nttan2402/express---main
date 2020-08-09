@@ -18,7 +18,7 @@ var setCookies = require("./middleware/middleware.session.js");
 // our default array of dreams 
 var count = 0;
 var app = express();
-var port = 9080;
+var port = process.env.PORT || 9080;
 //create a random string
 var randomString = shortid.generate();
 app.use(cookieParser(randomString)); // for cookies
